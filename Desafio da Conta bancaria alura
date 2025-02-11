@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class Desafio {
+    public static void main(String[] args) {
+        Scanner leitura = new Scanner(System.in);
+
+        System.out.println("Qual o seu nome completo");
+        String nomeCliente = leitura.nextLine();
+        String tipoDeConta = "";
+        double saldo;
+
+        System.out.println("Qual o tipo de conta desejada");
+        System.out.println("1. Corrente");
+        System.out.println("2. Poupança");
+        System.out.println("3. Salário");
+        System.out.println("(Ou qualquer outro número para cancelar)");
+
+
+        tipoDeConta = leitura.nextLine();
+
+
+        switch (tipoDeConta) {
+            case "1":
+                tipoDeConta = "Corrente";
+                break;
+            case "2":
+                tipoDeConta = "Poupança";
+                break;
+            case "3":
+                tipoDeConta = "Salário";
+                break;
+            default:
+                System.out.println("Escolha um numero válido!");
+                return;
+        }
+
+        System.out.println("qual o seu saldo ?");
+        saldo = leitura.nextDouble();
+
+        String dadosClinte = String.format("""
+                **************************************
+                 Dados do Cliente
+                
+                 Nome: %s
+                 Tipo de Conta: %s
+                
+                           Saldo atual:R$ %.2f
+                **************************************
+                """, nomeCliente, tipoDeConta, saldo);
+        System.out.println(dadosClinte);
+
+        int operacaoEscolhida = 0;
+        while (operacaoEscolhida != 4) {
+            String mensagemOperacoes = String.format("""
+                    Operações
+                    
+                    1 - Consultar saldo
+                    2 - Receber valor
+                    3 - Transferir valor
+                    4 - Sair
+                    
+                    """);
+
+            System.out.println(mensagemOperacoes);
+            operacaoEscolhida = leitura.nextInt();
+
+
+            if (operacaoEscolhida == 4) {
+                return;
+            } else if (operacaoEscolhida < 1 || operacaoEscolhida > 3) {
+                System.out.println("Operacao Invalida");
+            }
+
+            switch (operacaoEscolhida) {
+                case 1:
+                    System.out.println("Seu saldo atual é: R$" + saldo);
+                    break;
+                case 2:
+                    System.out.println("Qual o valor a ser recebido?");
+                    double valorRecebido = leitura.nextDouble();
+                    saldo = saldo + valorRecebido;
+                    System.out.println("Saldo atualizado: R$" + saldo);
+                    break;
+                case 3 :
+                    System.out.println("Qual o valor a ser transferido?");
+                    double valorTransferido = leitura.nextDouble();
+                    if (valorTransferido > saldo){
+                        System.out.println("Não há saldo suficiente para realizar esta operação");
+                        break;}
+                    saldo = saldo - valorTransferido;
+                    System.out.println("Saldo atualizado: R$" + saldo);
+                    break;
+
+
+            }
+
+        }
+
+    }
+}
