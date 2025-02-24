@@ -1,0 +1,29 @@
+[
+  {
+    "cep": "02363-190",
+    "logradouro": "Rua Bem-me-quer",
+    "complemento": "",
+    "bairro": "Jardim Flor de Maio",
+    "localidade": "São Paulo",
+    "estado": "São Paulo",
+    "regiao": "Sudeste"
+  },
+  {
+    "cep": "78891-074",
+    "logradouro": "Rua das Hortênsias",
+    "complemento": "de 681/682 a 1739/1740",
+    "bairro": "Alphaville",
+    "localidade": "Sorriso",
+    "estado": "Mato Grosso",
+    "regiao": "Centro-Oeste"
+  },
+  {
+    "cep": "78896-052",
+    "logradouro": "Avenida Perimetral Sudeste",
+    "complemento": "de 10031 a 10999 - lado ímpar",
+    "bairro": "Centro-Sul",
+    "localidade": "Sorriso",
+    "estado": "Mato Grosso",
+    "regiao": "Centro-Oeste"
+  }
+]
